@@ -99,7 +99,6 @@ public class BookedRoom {
 	
 	
 	
-	
 
 	public BookedRoom(String bookingConfirmationCode) {
 		super();
@@ -112,6 +111,11 @@ public class BookedRoom {
 
 	public void setBookingConfirmationCode(String bookingConfirmationCode) {
 		this.bookingConfirmationCode = bookingConfirmationCode;
+	}
+
+	public void setRoom(Room room2) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
