@@ -22,7 +22,7 @@ public class RoomController {
 
     private final IRoomService roomService = null;
 
-    @PostMapping("/add")
+    @PostMapping("/add/new-room")
     public ResponseEntity<RoomResponse> addNewRoom(
             @RequestParam("photo") MultipartFile photo,
             @RequestParam("roomType") String roomType,
