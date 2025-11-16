@@ -47,7 +47,7 @@ public class BookedRoom {
 	private int totalNumOfGuets;
 	
 	@Column(name = "children")
-	private int NumChildrens;
+	private int NumOfChildrens;
 	
 	@Column(name = "adults")
 	private int NumOfAdults;
@@ -71,15 +71,15 @@ public class BookedRoom {
 	
 	public void calculateTotalNumberOfGuest() {
 		
-		this.totalNumOfGuets = this.NumChildrens + this.NumOfAdults;
+		this.totalNumOfGuets = this.NumOfChildrens + this.NumOfAdults;
 	}
 
 	public int getNumChildrens() {
-		return NumChildrens;
+		return NumOfChildrens;
 	}
 
 	public void setNumChildrens(int numChildrens) {
-		NumChildrens = numChildrens;
+		NumOfChildrens = numChildrens;
 		calculateTotalNumberOfGuest();
 	}
 
