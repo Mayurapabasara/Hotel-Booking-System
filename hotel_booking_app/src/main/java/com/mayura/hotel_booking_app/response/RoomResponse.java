@@ -61,6 +61,13 @@ public class RoomResponse {
 						: null;
 		this.bookings = bookings;
 	}
+
+
+
+	public void setMessage(String string) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
