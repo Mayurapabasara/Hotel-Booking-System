@@ -39,6 +39,15 @@ const AddRoom = () => {
             e.preventDefault()
             try{
                 const success = await AddRoom(newRoom.photo, newRoom.roomType, newRoom.roomPrice)
+                if(success !=undefined){
+                    setSuccessMessage("A new room was added to the databse")
+                    setNewRoom({photo: null, roomType: "",roomPrice: ""})
+                    setImagePreview("")
+                    setErrorMessage("")
+                }
+                else{
+                    setErrorMessage("error.message")
+                }
             }
             catch(error){
                 setErrorMessage(error.message)
@@ -47,7 +56,16 @@ const AddRoom = () => {
 
 
   return (
-    <div>AddRoom</div>
+    <>
+    <section className="container, mt-5"></section>
+        <div>
+            <div>
+                <h2>Add a New Room</h2>
+            </div>
+        
+    </div>
+    </>
+    
   )
 }
 
