@@ -110,13 +110,11 @@ const AddRoom = () => {
                     </div>
 
 
-
-
-
-
-
-
-
+                    <div className='d-grid d-md-flex mt-2'>
+                        <button className="btn btn-outline-primary ml-5">
+                            Save Room
+                        </button>
+                    </div>
 
 
                 </form>
