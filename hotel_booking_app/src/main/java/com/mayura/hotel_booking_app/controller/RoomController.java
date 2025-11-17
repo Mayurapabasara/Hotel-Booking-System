@@ -2,6 +2,7 @@ package com.mayura.hotel_booking_app.controller;
 
 import java.math.BigDecimal;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,21 +18,20 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/rooms")
-@RequiredArgsConstructor
+@RequiredArgsConstructor 
 public class RoomController {
 
-    private final IRoomService roomService = null;
+	@Autowired
+    private IRoomService roomService; 
 
-    @PostMapping("/add")
+    @PostMapping("/add/new-room")
     public ResponseEntity<RoomResponse> addNewRoom(
             @RequestParam("photo") MultipartFile photo,
             @RequestParam("roomType") String roomType,
             @RequestParam("roomPrice") BigDecimal roomPrice) {
 
-        // Save room using service
         Room savedRoom = roomService.addNewRoom(photo, roomType, roomPrice);
 
-        // Build response
         RoomResponse response = new RoomResponse(
                 savedRoom.getId(),
                 savedRoom.getRoomType(),

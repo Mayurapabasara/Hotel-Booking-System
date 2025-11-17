@@ -84,25 +84,61 @@ public class Room {
 
 
 
-	public String getRoomType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
+
 
 
 	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
+		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
 
+	public String getRoomType() {
+		return roomType;
+	}
+
+	public void setRoomType(String roomType) {
+		this.roomType = roomType;
+	}
 
 	public BigDecimal getRoomPrice() {
-		// TODO Auto-generated method stub
-		return null;
+		return roomPrice;
+	}
+
+	public void setRoomPrice(BigDecimal roomPrice) {
+		this.roomPrice = roomPrice;
+	}
+
+	public boolean isBooked() {
+		return isBooked;
+	}
+
+	public void setBooked(boolean isBooked) {
+		this.isBooked = isBooked;
+	}
+
+	public Blob getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(Blob photo) {
+		this.photo = photo;
+	}
+
+	public List<BookedRoom> getBookings() {
+		return bookings;
 	}
 
 
+	public void setBookings(List<BookedRoom> bookings) {
+		this.bookings = bookings;
+	}
+
+
+	
 
 
 
