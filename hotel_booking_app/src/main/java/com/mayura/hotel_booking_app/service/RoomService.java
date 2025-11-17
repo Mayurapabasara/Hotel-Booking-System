@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,16 +71,23 @@ public class RoomService implements IRoomService{
 
 
 	@Override
-	public List<RoomResponse> getAllRooms() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 public List<RoomResponse> getAllRooms() {
+        List<Room> rooms = roomRepository.findAll();
+
+        return rooms.stream()
+                .map(room -> new RoomResponse(
+                        room.getId(),
+                        room.getRoomType(),
+                        room.getRoomPrice()
+                ))
+                .collect(Collectors.toList());
+    }
 
 
 	@Override
 	public Room getRoomById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+        return roomRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Room not found with id: " + id));
 	}
 
 
