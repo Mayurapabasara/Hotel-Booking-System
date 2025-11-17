@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mayura.hotel_booking_app.model.Room;
@@ -12,11 +14,12 @@ import javax.sql.rowset.serial.SerialBlob;
 
 import lombok.RequiredArgsConstructor;
 
-
+@Service
 @RequiredArgsConstructor
 public class RoomService implements IRoomService{
 	
-	private final RoomRepository roomRepository = null;
+	@Autowired
+	private RoomRepository roomRepository;
 	
 
 	@Override
